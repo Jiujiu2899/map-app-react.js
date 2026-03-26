@@ -10,9 +10,11 @@ const dutyStore = (set, get) => ({
   fetchAll: async () => {
     try {
       const personnel = await api.get("/personnel");
+      const locations = await api.get("/locations")
 
       set({
         personnel: personnel,
+        locations: locations,
       });
     } catch (err) {
       console.log("fetchAll err");
