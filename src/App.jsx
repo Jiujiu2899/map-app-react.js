@@ -4,22 +4,16 @@ import LocationList from "./components/locations/LocationList";
 import MapView from "./components/map/MapView";
 import axios from "axios";
 import { useEffect } from "react";
+import useDutyStore from "./store/useDutyStore";
 
 const App = () => {
   //js
-  useEffect(() => {
-    //fn body
-    fecthAll();
-  }, []);
+  const fetchAll = useDutyStore((state) => state.fetchAll )
 
-  const fecthAll = async () => {
-    try {
-      const res = await axios.get("http://localhost:3000/personnel");
-      console.log(res.data);
-    } catch (err) {
-      console.log(err.response.data);
-    }
-  };
+  useEffect(() => {
+    //fn body 
+    fetchAll()
+  })
 
   return (
     <div className="flex h-screen bg-gray-100">
