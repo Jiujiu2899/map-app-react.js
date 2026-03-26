@@ -2,8 +2,9 @@ import { create } from "zustand";
 
 const dutyStore = () => ({
   personnel: [],
-  name: "Mark",
-  lee: () => console.log("Mark Lee"),
+  locations: [],
+  assignments: [],
+  selectedLocationId: null,
 });
 
 const useDutyStore = create(dutyStore);
