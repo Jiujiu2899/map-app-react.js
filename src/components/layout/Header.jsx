@@ -2,7 +2,7 @@ import { Plus, X } from "lucide-react";
 
 const Header = ({ adding, setAdding }) => {
   //js
-  console.log(adding);
+  
   return (
     <div className="p-4 bg-white shadow-md border-b border-gray-200">
       <div className="flex justify-between">

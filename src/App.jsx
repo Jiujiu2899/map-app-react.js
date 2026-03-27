@@ -16,7 +16,11 @@ const App = () => {
   useEffect(() => {
     //fn body
     fetchAll();
-  });
+  },[]);
+
+  const onPick = (lat,lng) => {
+    console.log(lat,lng)
+  }
 
   return (
     <div className="flex h-screen bg-gray-100">
@@ -26,7 +30,7 @@ const App = () => {
         <Header adding={adding} setAdding={setAdding} />
 
         <div className="flex flex-1 overflow-hidden">
-          <MapView />
+          <MapView adding={adding} onPick={onPick}/>
           <LocationList />
         </div>
       </div>

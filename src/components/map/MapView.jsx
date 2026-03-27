@@ -1,8 +1,18 @@
-import { MapContainer } from "react-leaflet";
+import { MapContainer, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import Layers from "./Layers";
 
-const MapView = () => {
+const ClickToAdd = () => {
+  useMapEvents({
+    click(e){
+      console.log(e.latlng);
+      map.flyTo(e.latlng);
+    }
+  });
+  return;
+};
+
+const MapView = ({ adding, onPick }) => {
   const center = [13, 100];
 
   return (
@@ -14,6 +24,8 @@ const MapView = () => {
         scrollWheelZoom={true}
       >
         <Layers />
+
+        <ClickToAdd />
       </MapContainer>
     </div>
   );
