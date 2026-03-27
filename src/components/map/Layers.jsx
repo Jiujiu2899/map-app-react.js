@@ -12,7 +12,7 @@ const Layers = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
       </LayersControl.BaseLayer>
-      <LayersControl.BaseLayer name="Esri.WorldImagery" checked>
+      <LayersControl.BaseLayer name="Esri.WorldImagery">
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"

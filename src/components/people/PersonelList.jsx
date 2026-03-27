@@ -4,7 +4,7 @@ import { UsersRound, Clock8 } from "lucide-react";
 const PersonelList = () => {
   //zustand การเข้าถึง store
   const personnel = useDutyStore((state) => state.personnel);
-  console.log(personnel);
+ 
 
   return (
     <div className="w-80 bg-white overflow-y-auto">
