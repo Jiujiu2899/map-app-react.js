@@ -1,0 +1,29 @@
+import React from "react";
+import { useState } from "react";
+
+const AddLocationModal = ({ lat, lng, setAdding, setPending }) => {
+  const [name, setName] = useState("");
+  console.log(name)
+
+  return (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999]">
+      <div className="bg-white p-6 rounded-2xl shadow-2xl w-96">
+        <h3 className="text-xl mb-2">เพิ่มจุดเข้าเวรใหม่</h3>
+        <div className="text-x text-gray-700">
+          Lat: {lat.toFixed(6)} Lng: {lng.toFixed(6)}
+        </div>
+        <input className="w-full border px-4 rounded-md mt-4 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 p-2" placeholder="Input Name" autoFocus
+        
+        onChange={(e)=>setName(e.target.value)}
+        />
+        
+        <div className="flex gap-4">
+          <button className="flex-1 bg-green-500 text-white rounded-md py-1 hover:bg-green-700">Save</button>
+          <button className="flex-1 border rounded-md py-1 hover:bg-red-500 hover:text-white">Cancel</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AddLocationModal;

@@ -5,17 +5,15 @@ import MapView from "./components/map/MapView";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import useDutyStore from "./store/useDutyStore";
+import AddLocationModal from "./components/locations/AddLocationModal";
 
 const App = () => {
-  //js
-
   const [adding, setAdding] = useState(false);
   const [pending, setPending] = useState(null);
 
   const fetchAll = useDutyStore((state) => state.fetchAll);
 
   useEffect(() => {
-    //fn body
     fetchAll();
   }, []);
 
@@ -37,6 +35,15 @@ const App = () => {
           <LocationList />
         </div>
       </div>
+
+      {pending && (
+        <AddLocationModal
+          lat={pending.lat}
+          lng={pending.lng}
+          setAdding={setAdding}
+          setPending={setPending}
+        />
+      )}
     </div>
   );
 };
