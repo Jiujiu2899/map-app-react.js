@@ -20,13 +20,10 @@ const App = () => {
   }, []);
 
   const onPick = (lat, lng) => {
-    setPending({
-      lat: lat,
-      lng: lng,
-    });
+    setPending({ lat, lng });
   };
 
-  console.log(pending)
+  console.log(pending);
 
   return (
     <div className="flex h-screen bg-gray-100">
