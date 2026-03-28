@@ -10,17 +10,23 @@ const App = () => {
   //js
 
   const [adding, setAdding] = useState(false);
+  const [pending, setPending] = useState(null);
 
   const fetchAll = useDutyStore((state) => state.fetchAll);
 
   useEffect(() => {
     //fn body
     fetchAll();
-  },[]);
+  }, []);
 
-  const onPick = (lat,lng) => {
-    console.log(lat,lng)
-  }
+  const onPick = (lat, lng) => {
+    setPending({
+      lat: lat,
+      lng: lng,
+    });
+  };
+
+  console.log(pending)
 
   return (
     <div className="flex h-screen bg-gray-100">
@@ -30,7 +36,7 @@ const App = () => {
         <Header adding={adding} setAdding={setAdding} />
 
         <div className="flex flex-1 overflow-hidden">
-          <MapView adding={adding} onPick={onPick}/>
+          <MapView adding={adding} onPick={onPick} />
           <LocationList />
         </div>
       </div>

@@ -5,9 +5,7 @@ import Layers from "./Layers";
 const ClickToAdd = ({ adding, onPick }) => {
   useMapEvents({
     click(e) {
-      if (adding) {
-        onPick(e.latlng.lat, e.latlng.lng);
-      }
+      if (adding) onPick(e.latlng.lat, e.latlng.lng);
     },
   });
   return;
