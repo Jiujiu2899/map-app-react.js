@@ -14,7 +14,6 @@ const LocationList = () => {
 
       <div className="p-4 space-y-3">
         {/* loop */}
-
         {locations.map((item) => {
           return (
             <div key={item.id} className="border-2 border-dashed rounded-md border-gray-400 bg-gray-50">

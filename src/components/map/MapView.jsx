@@ -2,12 +2,13 @@ import { MapContainer, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import Layers from "./Layers";
 
-const ClickToAdd = () => {
+const ClickToAdd = ({ adding, onPick }) => {
   useMapEvents({
-    click(e){
-      console.log(e.latlng);
-      map.flyTo(e.latlng);
-    }
+    click(e) {
+      if (adding) {
+        onPick(e.latlng.lat, e.latlng.lng);
+      }
+    },
   });
   return;
 };
@@ -25,7 +26,7 @@ const MapView = ({ adding, onPick }) => {
       >
         <Layers />
 
-        <ClickToAdd />
+        <ClickToAdd adding={adding} onPick={onPick} />
       </MapContainer>
     </div>
   );
