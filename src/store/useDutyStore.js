@@ -10,7 +10,7 @@ const dutyStore = (set, get) => ({
   fetchAll: async () => {
     try {
       const personnel = await api.get("/personnel");
-      const locations = await api.get("/locations")
+      const locations = await api.get("/locations");
 
       set({
         personnel: personnel,
@@ -18,6 +18,21 @@ const dutyStore = (set, get) => ({
       });
     } catch (err) {
       console.log("fetchAll err");
+    }
+  },
+
+  addLocation: async (lat, lng, name) => {
+    try {
+      const res = await api.post("/locations", {
+        name: name,
+        lat: Number(lat),
+        lng: Number(lng),
+        maxCapacity: 5,
+      });
+
+      await get().fetchAll()
+    } catch (err) {
+      console.log("AddLLocation Err", err);
     }
   },
 });

@@ -51,6 +51,46 @@
       "lat": 13.762937265148677,
       "lng": 100.50640046596529,
       "maxCapacity": 5
+    },
+    {
+      "lat": 16.676704038957624,
+      "lng": null,
+      "maxCapacity": 5,
+      "id": "cJRF4mKFA3Y"
+    },
+    {
+      "lat": 15.590152556915431,
+      "lng": null,
+      "maxCapacity": 5,
+      "id": "GIm-zrntQHU"
+    },
+    {
+      "name": ",kkkkk",
+      "lat": 15.74880787124203,
+      "lng": 100.08319878779406,
+      "maxCapacity": 5,
+      "id": "hFDSzla1qwg"
+    },
+    {
+      "name": "hhhh",
+      "lat": 15.685384647439559,
+      "lng": 99.95144443691481,
+      "maxCapacity": 5,
+      "id": "KLMIcwF73JU"
+    },
+    {
+      "name": "hhhwssss",
+      "lat": 16.582288573932136,
+      "lng": 104.57382624692816,
+      "maxCapacity": 5,
+      "id": "Ms_WTiKt9o8"
+    },
+    {
+      "name": "gggg",
+      "lat": 16.834427330972435,
+      "lng": 99.14993880239946,
+      "maxCapacity": 5,
+      "id": "jXijOmZ7XEg"
     }
   ],
   "locationPersonnel": [
@@ -59,5 +99,6 @@
       "locationId": "952f",
       "personId": "2"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

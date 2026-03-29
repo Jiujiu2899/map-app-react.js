@@ -2,7 +2,6 @@ import PersonelList from "./components/people/PersonelList";
 import Header from "./components/layout/Header";
 import LocationList from "./components/locations/LocationList";
 import MapView from "./components/map/MapView";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import useDutyStore from "./store/useDutyStore";
 import AddLocationModal from "./components/locations/AddLocationModal";
