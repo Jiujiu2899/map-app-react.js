@@ -3,6 +3,13 @@ import useDutyStore from "../../store/useDutyStore";
 
 const LocationList = () => {
   const locations = useDutyStore((state) => state.locations);
+
+  const onDropToLocation = (e, locationId) =>{
+    const personId = e.dataTransfer.getData('text/plain')
+    
+    console.log(personId, locationId)
+  }
+
   return (
     <div className="w-80 bg-white border-l shadow-lg border-gray-200">
       <div className="p-6 border-b border-gray-200 bg-blue-100">
@@ -16,7 +23,10 @@ const LocationList = () => {
         {/* loop */}
         {locations.map((item) => {
           return (
-            <div key={item.id} className="border-2 border-dashed rounded-md border-gray-400 bg-gray-50">
+            <div 
+            onDragOver={(e) => e.preventDefault()}
+            onDrop={(e) => onDropToLocation(e, item.id) }
+            key={item.id} className="border-2 border-dashed rounded-md border-gray-400 bg-gray-50">
               <div className="flex justify-between p-2">
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold">{item.name}</h3>
