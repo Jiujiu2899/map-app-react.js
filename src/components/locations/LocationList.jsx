@@ -3,11 +3,16 @@ import useDutyStore from "../../store/useDutyStore";
 
 const LocationList = () => {
   const locations = useDutyStore((state) => state.locations);
+  const assignPerson = useDutyStore((state) => state.assignPerson);
+  const assignments = useDutyStore((state) => state.assignments);
 
-  const onDropToLocation = (e, locationId) =>{
+  
+  console.log(assignments)
+
+  const onDropToLocation = async (e, locationId) =>{
     const personId = e.dataTransfer.getData('text/plain')
-    
-    console.log(personId, locationId)
+
+    await assignPerson(personId,locationId)
   }
 
   return (
